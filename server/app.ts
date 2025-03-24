@@ -4,19 +4,22 @@ import express from "express";
 
 declare module "react-router" {
   interface AppLoadContext {
-    VALUE_FROM_EXPRESS: string;
+    EXPRESS_CONTEXT_EXAMPLE: string;
   }
 }
 
 export const app = express();
 
+const getContextValue = () => {
+  return `Example from Express and Node@${process.version}`;
+};
+
 app.use(
   createRequestHandler({
-    // @ts-expect-error - virtual module provided by React Router at build time
     build: () => import("virtual:react-router/server-build"),
     getLoadContext() {
       return {
-        VALUE_FROM_EXPRESS: "Hello from Express",
+        EXPRESS_CONTEXT_EXAMPLE: getContextValue(),
       };
     },
   })
