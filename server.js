@@ -1,3 +1,7 @@
+// DON'T TOUCH THIS FILE
+// React Router provide a server.ts to work with express
+// ./server/server.ts
+
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
