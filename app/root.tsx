@@ -1,14 +1,15 @@
+import "~/app.css";
+
 import {
   isRouteErrorResponse,
   Links,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
+  Outlet,
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -53,11 +54,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     <main className="pt-16 p-4 container mx-auto">
       <h1>{message}</h1>
       <p>{details}</p>
-      {stack && (
+      {stack ? (
         <pre className="w-full p-4 overflow-x-auto">
           <code>{stack}</code>
         </pre>
-      )}
+      ) : null}
     </main>
   );
 }

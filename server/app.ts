@@ -16,11 +16,12 @@ const getContextValue = () => {
 
 app.use(
   createRequestHandler({
+    // eslint-disable-next-line import/no-unresolved
     build: () => import("virtual:react-router/server-build"),
     getLoadContext() {
       return {
         EXPRESS_CONTEXT_EXAMPLE: getContextValue(),
       };
     },
-  })
+  }),
 );

@@ -1,6 +1,7 @@
-import { Await } from "react-router";
-import type { Route } from "./+types/home";
 import React from "react";
+import { Await } from "react-router";
+
+import type { Route } from "./+types/home";
 
 export function meta() {
   return [
@@ -30,6 +31,7 @@ export function loader({ request, context }: Route.LoaderArgs) {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const { name, express, asyncValue } = loaderData;
+
   return (
     <main className="p-8">
       <h1 className="text-2xl font-bold text-primary">Index Page</h1>

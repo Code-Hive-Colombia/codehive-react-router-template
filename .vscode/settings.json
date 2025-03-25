@@ -1,0 +1,9 @@
+{
+  // Always prefered absolute alias path
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // Fix all eslint errors when save file
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  }
+}
